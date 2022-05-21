@@ -217,25 +217,25 @@ class ps4(QMainWindow):
             
             # For Roll 
         if(button[LEFT_ARROW]==True):
-            roll="16001"
+            roll="16000"
             pitch="16000"
             
         elif(button[RIGHT_ARROW]==True):
-            roll="16000"
+            roll="16001"
             pitch="16001"
             
-        elif(button[UP_ARROW]==False and button[DOWN_ARROW]==False):
-            roll="00000"
-            pitch="00000"
-                
-            # For Pitch
-        if(button[UP_ARROW]==True):
-            pitch="16001"
+        # For Pitch
+        elif(button[UP_ARROW]==True):
+           
+            pitch="16000"
             roll="16001"
         elif(button[DOWN_ARROW]==True):
-            pitch="16000"
+            
+            pitch="16001"
             roll="16000"
-        elif(button[RIGHT_ARROW]==False and button[LEFT_ARROW]==False):
+        
+        else:
+            
             pitch="00000"
             roll="00000"
                 
@@ -245,9 +245,10 @@ class ps4(QMainWindow):
             gripper="16001"
         else:
             gripper="00000"
-            
+        
             
         self.SendMsg("as"+str(swivel)+'o'+y_l+'t'+y_r+'r'+str(roll)+'p'+str(pitch)+'g'+str(gripper))
+        
         
         
     def ScienceMode(self):
